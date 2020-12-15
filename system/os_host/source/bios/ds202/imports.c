@@ -1,4 +1,17 @@
 #include "BIOS.h"
+#include "LCD.c"
+#include "DS202V2_0.h"
+#include "I2C.h"
+#include "Flash.h"
+#include "Drive.h"
+#include "Flash.c"
+#include "Version.h"
+#include "Option.h"
+#include "FAT12.h"
+#include "Menu.h"
+
+u16  Smpl[0x4000];
+uc16 DEPTH[]     = { 1024 , 2048 , 4096 , 8192};
 
 void SetPixel(u16 Color)
 {
@@ -105,7 +118,7 @@ void HardwareInit()
   __Ctrl(B_LIGHT, 50);                                  //
   Ctrl(PM_CTRL, CHG_ACT);                               //
   __Ctrl(BUZZVOL, 50);                                  //
-  Beep(200);                                            //200mS
+  xBeep(200);                                            //200mS
   Init_Fat_Value();
   TIM6_Config(); 
   __Ctrl(SMPL_ST, DISABLE);
@@ -113,7 +126,6 @@ void HardwareInit()
   __Ctrl(SMPLBUF, (u32)Smpl);
   __Ctrl(SMPLNUM, DEPTH[PopMenu1_Value[WIN_Depth]]);
   __Ctrl(SMPL_ST, ENABLE);
-  NVIC_SetVectorTable(NVIC_VectTab_FLASH, (uint32_t)g_pfnVectors - NVIC_VectTab_FLASH);
 }
 
 uint32_t GetKeys()
@@ -121,31 +133,11 @@ uint32_t GetKeys()
   return 0;
 }
 
-void ExtFlashSecWr(u8* pBuf, u32 WrAddr)
+uintptr_t GetAttribute(uintptr_t attribute)
 {
-  u16 SecSize = __Info(SECTOR);
-  u32 i, Addr = WrAddr &  (~(SecSize-1));
-  ExtFlashSectorErase(Addr); 
-  for(i=0; i<SecSize; i+=PAGE_SIZE){
-    ExtFlashPageProg(&pBuf[i], Addr+i, PP);
-  }
+  return 0;
 }
-
-void ExtFlashDataRd(u8* pBuf, u32 RdAddr, u16 Lenght)
-{
-//  NVIC_DisableIRQ(USB_LP_IRQn);
-  ExtFlashWaitForWrEnd();
-  ExtFlash_CS_LOW();
-  ExtFlashSendByte(READ);
-  ExtFlashSendByte((RdAddr & 0xFF0000) >> 16);
-  ExtFlashSendByte((RdAddr & 0xFF00) >> 8);
-  ExtFlashSendByte( RdAddr & 0xFF);
-  for(u16 i=0; i<Lenght; i++) pBuf[i] = ~ExtFlashReadByte();
-  ExtFlash_CS_HIGH();
-//  NVIC_EnableIRQ(USB_LP_IRQn);
-}
-
-
+/*
 uintptr_t GetAttribute(enum EAttribute attribute)
 {
   switch (attribute)
@@ -163,4 +155,4 @@ uintptr_t GetAttribute(enum EAttribute attribute)
     default: return 0;
   }
 }
-
+*/

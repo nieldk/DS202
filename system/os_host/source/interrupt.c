@@ -43,6 +43,9 @@ void SysTickHandler(void)
   // TODO: Could be somewhere else!
 
   // keyboard
+  #ifdef DS202
+  gKeyMask = __Info(KEY_IN);
+  #else
   uint32_t keyMask = GetKeys();
   if (gKeyMask != keyMask)
   {
@@ -65,8 +68,9 @@ void SysTickHandler(void)
 
     gKeyMask = keyMask;
   }
+  #endif
 }
-#if defined(DS203) || defined(DS203HD)
+#if defined(DS203) || defined(DS203HD) || defined(DS202)
 #define KEY_IF_RST 19
 //extern void __Set(uint8_t Object, uint32_t Value);
 extern void __Set(int x, int y);

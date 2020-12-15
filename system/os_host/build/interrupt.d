@@ -43,5 +43,29 @@ interrupt.o: ../source/interrupt.c \
  ../library/STM32_USB-FS-Device_Driver/inc/usb_core.h \
  /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stdbool.h \
  ../source/bios/ds202/imports.c ../source/bios/ds202/BIOS.h \
+ ../source/bios/ds202/LCD.c ../source/bios/ds202/DS202V2_0.h \
+ ../source/bios/ds202/I2C.h ../source/bios/ds202/Flash.h \
+ ../source/bios/ds202/Drive.h ../source/bios/ds202/Flash.c \
+ ../source/bios/ds202/Version.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/string.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/newlib.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/config.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/ieeefp.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/reent.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/_ansi.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/lib/gcc/arm-none-eabi/9.3.1/include/stddef.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_types.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/_types.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/lock.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/cdefs.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/_locale.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/strings.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/sys/string.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/stdlib.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/machine/stdlib.h \
+ /opt/gcc-arm-none-eabi-9-2020-q2-update/arm-none-eabi/include/alloca.h \
+ ../source/bios/ds202/Option.h ../source/bios/ds202/FAT12.h \
+ ../source/bios/ds202/Menu.h \
  ../library/STM32F30x_StdPeriph_Driver/inc/stm32f30x_misc.h \
  ../library/CMSIS/Device/STM32F30x/Include/system_stm32f30x.h

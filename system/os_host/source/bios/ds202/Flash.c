@@ -17,8 +17,6 @@
 #define Dummy_Byte 0xA5
 #define WIP_Flag   0x01     /* Write In Progress (WIP) flag */
 #define TMAX       100000   /* ³¬Ê±ÏÞÖÆ*/
-#define SEC_SIZE 4096
-#define SEC_AMNT 2048
 
 u8   ExtFlashReadByte(void);
 u8   ExtFlashSendByte(u8 byte);

@@ -1,7 +1,7 @@
 #pragma once
 #include "Serialize.h"
 
-#if defined(DS203) || defined(DS213) || defined(LA104)
+#if defined(DS203) || defined(DS213) || defined(LA104) || defined(DS202)
 #define BufferSectorSize BIOS::FAT::SectorSize
 #else
 #define BufferSectorSize (int)BIOS::SYS::GetAttribute(BIOS::SYS::EAttribute::DiskSectorSize)

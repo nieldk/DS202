@@ -1,169 +1,70 @@
-In file included from ../source/interrupt.c:7:
-../source/bios/ds202/imports.c: In function 'ReadPixel':
-../source/bios/ds202/imports.c:27:3: error: implicit declaration of function 'LCD_CMD_W' [-Werror=implicit-function-declaration]
-   27 |   LCD_CMD_W(0x2E);
-      |   ^~~~~~~~~
-../source/bios/ds202/imports.c:28:3: error: implicit declaration of function 'LCD_PORT_IN' [-Werror=implicit-function-declaration]
-   28 |   LCD_PORT_IN();
-      |   ^~~~~~~~~~~
-../source/bios/ds202/imports.c:29:3: error: implicit declaration of function 'LCD_nRD_LOW' [-Werror=implicit-function-declaration]
-   29 |   LCD_nRD_LOW();
-      |   ^~~~~~~~~~~
-../source/bios/ds202/imports.c:32:3: error: implicit declaration of function 'LCD_nRD_HIGH' [-Werror=implicit-function-declaration]
-   32 |   LCD_nRD_HIGH();
-      |   ^~~~~~~~~~~~
-../source/bios/ds202/imports.c:40:9: error: implicit declaration of function 'READ_LCD' [-Werror=implicit-function-declaration]
-   40 |   Tmp = READ_LCD();
-      |         ^~~~~~~~
-../source/bios/ds202/imports.c:50:3: error: implicit declaration of function 'LCD_PORT_OUT' [-Werror=implicit-function-declaration]
-   50 |   LCD_PORT_OUT();
-      |   ^~~~~~~~~~~~
-../source/bios/ds202/imports.c: In function 'Set_Block':
-../source/bios/ds202/imports.c:57:3: error: implicit declaration of function 'LCD_DAT_W' [-Werror=implicit-function-declaration]
-   57 |   LCD_DAT_W(y1 >> 8);
-      |   ^~~~~~~~~
-../source/bios/ds202/imports.c: In function 'HardwareInit':
-../source/bios/ds202/imports.c:103:3: error: implicit declaration of function 'SPI_Config'; did you mean 'SPI_Init'? [-Werror=implicit-function-declaration]
-  103 |   SPI_Config();
-      |   ^~~~~~~~~~
-      |   SPI_Init
-../source/bios/ds202/imports.c:106:17: error: 'CHG_ACT' undeclared (first use in this function)
-  106 |   Ctrl(PM_CTRL, CHG_ACT);                               //
-      |                 ^~~~~~~
-../source/bios/ds202/imports.c:106:17: note: each undeclared identifier is reported only once for each function it appears in
-../source/bios/ds202/imports.c:108:3: error: implicit declaration of function 'Beep'; did you mean 'xBeep'? [-Werror=implicit-function-declaration]
-  108 |   Beep(200);                                            //200mS
-      |   ^~~~
-      |   xBeep
-../source/bios/ds202/imports.c:109:3: error: implicit declaration of function 'Init_Fat_Value' [-Werror=implicit-function-declaration]
-  109 |   Init_Fat_Value();
-      |   ^~~~~~~~~~~~~~
-../source/bios/ds202/imports.c:110:3: error: implicit declaration of function 'TIM6_Config'; did you mean 'TIM_ITConfig'? [-Werror=implicit-function-declaration]
-  110 |   TIM6_Config();
-      |   ^~~~~~~~~~~
-      |   TIM_ITConfig
-../source/bios/ds202/imports.c:113:24: error: 'Smpl' undeclared (first use in this function)
-  113 |   __Ctrl(SMPLBUF, (u32)Smpl);
-      |                        ^~~~
-../source/bios/ds202/imports.c:114:19: error: 'DEPTH' undeclared (first use in this function)
-  114 |   __Ctrl(SMPLNUM, DEPTH[PopMenu1_Value[WIN_Depth]]);
-      |                   ^~~~~
-../source/bios/ds202/imports.c:114:25: error: 'PopMenu1_Value' undeclared (first use in this function)
-  114 |   __Ctrl(SMPLNUM, DEPTH[PopMenu1_Value[WIN_Depth]]);
-      |                         ^~~~~~~~~~~~~~
-../source/bios/ds202/imports.c:114:40: error: 'WIN_Depth' undeclared (first use in this function)
-  114 |   __Ctrl(SMPLNUM, DEPTH[PopMenu1_Value[WIN_Depth]]);
-      |                                        ^~~~~~~~~
-../source/bios/ds202/imports.c:116:53: error: 'g_pfnVectors' undeclared (first use in this function)
-  116 |   NVIC_SetVectorTable(NVIC_VectTab_FLASH, (uint32_t)g_pfnVectors - NVIC_VectTab_FLASH);
-      |                                                     ^~~~~~~~~~~~
-../source/bios/ds202/imports.c: In function 'ExtFlashSecWr':
-../source/bios/ds202/imports.c:128:3: error: implicit declaration of function 'ExtFlashSectorErase'; did you mean 'ExtFlashSecWr'? [-Werror=implicit-function-declaration]
-  128 |   ExtFlashSectorErase(Addr);
-      |   ^~~~~~~~~~~~~~~~~~~
-      |   ExtFlashSecWr
-../source/bios/ds202/imports.c:129:26: error: 'PAGE_SIZE' undeclared (first use in this function)
-  129 |   for(i=0; i<SecSize; i+=PAGE_SIZE){
-      |                          ^~~~~~~~~
-../source/bios/ds202/imports.c:130:5: error: implicit declaration of function 'ExtFlashPageProg' [-Werror=implicit-function-declaration]
-  130 |     ExtFlashPageProg(&pBuf[i], Addr+i, PP);
-      |     ^~~~~~~~~~~~~~~~
-../source/bios/ds202/imports.c:130:40: error: 'PP' undeclared (first use in this function)
-  130 |     ExtFlashPageProg(&pBuf[i], Addr+i, PP);
-      |                                        ^~
-../source/bios/ds202/imports.c: In function 'ExtFlashDataRd':
-../source/bios/ds202/imports.c:137:3: error: implicit declaration of function 'ExtFlashWaitForWrEnd' [-Werror=implicit-function-declaration]
-  137 |   ExtFlashWaitForWrEnd();
-      |   ^~~~~~~~~~~~~~~~~~~~
-In file included from ../source/bios/ds202/imports.c:1,
-                 from ../source/interrupt.c:7:
-../source/bios/ds202/BIOS.h:116:43: error: 'SPI_CS' undeclared (first use in this function); did you mean 'SPI_Cmd'?
-  116 | #define ExtFlash_CS_LOW()   GPIOD->BRR  = SPI_CS
-      |                                           ^~~~~~
-../source/bios/ds202/imports.c:138:3: note: in expansion of macro 'ExtFlash_CS_LOW'
-  138 |   ExtFlash_CS_LOW();
-      |   ^~~~~~~~~~~~~~~
-In file included from ../source/interrupt.c:7:
-../source/bios/ds202/imports.c:139:3: error: implicit declaration of function 'ExtFlashSendByte'; did you mean 'ExtFlashSecWr'? [-Werror=implicit-function-declaration]
-  139 |   ExtFlashSendByte(READ);
-      |   ^~~~~~~~~~~~~~~~
-      |   ExtFlashSecWr
-../source/bios/ds202/imports.c:139:20: error: 'READ' undeclared (first use in this function)
-  139 |   ExtFlashSendByte(READ);
-      |                    ^~~~
-../source/bios/ds202/imports.c:143:42: error: implicit declaration of function 'ExtFlashReadByte' [-Werror=implicit-function-declaration]
-  143 |   for(u16 i=0; i<Lenght; i++) pBuf[i] = ~ExtFlashReadByte();
-      |                                          ^~~~~~~~~~~~~~~~
-../source/bios/ds202/imports.c: At top level:
-../source/bios/ds202/imports.c:149:29: error: 'enum EAttribute' declared inside parameter list will not be visible outside of this definition or declaration [-Werror]
-  149 | uintptr_t GetAttribute(enum EAttribute attribute)
-      |                             ^~~~~~~~~~
-../source/bios/ds202/imports.c:149:40: error: parameter 1 ('attribute') has incomplete type
-  149 | uintptr_t GetAttribute(enum EAttribute attribute)
-      |                        ~~~~~~~~~~~~~~~~^~~~~~~~~
-../source/bios/ds202/imports.c: In function 'GetAttribute':
-../source/bios/ds202/imports.c:153:10: error: 'DeviceType' undeclared (first use in this function); did you mean 'Device_Table'?
-  153 |     case DeviceType: return (uintptr_t)"CLEAN";
-      |          ^~~~~~~~~~
-      |          Device_Table
-../source/bios/ds202/imports.c:154:10: error: 'VersionDfu' undeclared (first use in this function)
-  154 |     case VersionDfu: return (uintptr_t)nullptr;
-      |          ^~~~~~~~~~
-../source/bios/ds202/imports.c:154:40: error: 'nullptr' undeclared (first use in this function)
-  154 |     case VersionDfu: return (uintptr_t)nullptr;
-      |                                        ^~~~~~~
-../source/bios/ds202/imports.c:155:10: error: 'VersionHardware' undeclared (first use in this function)
-  155 |     case VersionHardware: return (uintptr_t)(char*)nullptr;
-      |          ^~~~~~~~~~~~~~~
-../source/bios/ds202/imports.c:156:10: error: 'VersionSystem' undeclared (first use in this function)
-  156 |     case VersionSystem: return (uintptr_t)(char*)nullptr;
-      |          ^~~~~~~~~~~~~
-../source/bios/ds202/imports.c:157:10: error: 'VersionFpga' undeclared (first use in this function)
-  157 |     case VersionFpga: return (uintptr_t)(char*)nullptr;
-      |          ^~~~~~~~~~~
-../source/bios/ds202/imports.c:158:10: error: 'SerialNumber' undeclared (first use in this function)
-  158 |     case SerialNumber: return (uintptr_t)(uint32_t)0;
-      |          ^~~~~~~~~~~~
-../source/bios/ds202/imports.c:159:10: error: 'LicenseNumber' undeclared (first use in this function)
-  159 |     case LicenseNumber: return (uintptr_t)0;
-      |          ^~~~~~~~~~~~~
-../source/bios/ds202/imports.c:160:10: error: 'LicenseValid' undeclared (first use in this function)
-  160 |     case LicenseValid: return (uintptr_t)0;
-      |          ^~~~~~~~~~~~
-../source/bios/ds202/imports.c:161:10: error: 'DisplayType' undeclared (first use in this function)
-  161 |     case DisplayType: return (uintptr_t)0;
-      |          ^~~~~~~~~~~
-../source/bios/ds202/imports.c:162:10: error: 'DiskType' undeclared (first use in this function)
-  162 |     case DiskType: return (uintptr_t)0;
-      |          ^~~~~~~~
-../source/interrupt.c: In function 'SysTickHandler':
-../source/interrupt.c:49:19: error: 'KeyUp' undeclared (first use in this function)
-   49 |     if (keyMask & KeyUp)
-      |                   ^~~~~
-../source/interrupt.c:51:19: error: 'KeyDown' undeclared (first use in this function)
-   51 |     if (keyMask & KeyDown)
-      |                   ^~~~~~~
-../source/interrupt.c:53:19: error: 'KeyRight' undeclared (first use in this function)
-   53 |     if (keyMask & KeyRight)
-      |                   ^~~~~~~~
-../source/interrupt.c:55:19: error: 'KeyLeft' undeclared (first use in this function)
-   55 |     if (keyMask & KeyLeft)
-      |                   ^~~~~~~
-../source/interrupt.c:57:19: error: 'KeyF1' undeclared (first use in this function)
-   57 |     if (keyMask & KeyF1)
-      |                   ^~~~~
-../source/interrupt.c:59:19: error: 'KeyF2' undeclared (first use in this function)
-   59 |     if (keyMask & KeyF2)
-      |                   ^~~~~
-../source/interrupt.c:61:19: error: 'KeyF3' undeclared (first use in this function)
-   61 |     if (keyMask & KeyF3)
-      |                   ^~~~~
-../source/interrupt.c:63:19: error: 'KeyF4' undeclared (first use in this function)
-   63 |     if (keyMask & KeyF4)
-      |                   ^~~~~
-In file included from ../source/interrupt.c:7:
-../source/bios/ds202/imports.c: In function 'GetAttribute':
-../source/bios/ds202/imports.c:165:1: error: control reaches end of non-void function [-Werror=return-type]
-  165 | }
-      | ^
-cc1: all warnings being treated as errors
+nieldk@x201:~/build/DS202/system/os_host$ ./build_ds202.sh 
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `FLASH_Prog':
+interrupt.c:(.text+0x8): undefined reference to `FLASH_WaitForLastOperation'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x12): undefined reference to `FLASH_ClearFlag'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `FLASH_Erase':
+interrupt.c:(.text+0x34): undefined reference to `FLASH_WaitForLastOperation'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3e): undefined reference to `FLASH_ClearFlag'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `ExtFlashSendByte':
+interrupt.c:(.text+0x60): undefined reference to `SPI_I2S_GetFlagStatus'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x6a): undefined reference to `SPI_SendData8'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x76): undefined reference to `SPI_I2S_GetFlagStatus'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `ExtFlashSecWr':
+interrupt.c:(.text+0x1a4): undefined reference to `__Info'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `HardwareInit':
+interrupt.c:(.text+0x3b0): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3b4): undefined reference to `SPI_Config'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3dc): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3e4): undefined reference to `Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3ec): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3f0): undefined reference to `Init_Fat_Value'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3f4): undefined reference to `TIM6_Config'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x3fc): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x404): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x40c): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x41e): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: interrupt.c:(.text+0x440): undefined reference to `PopMenu1_Value'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `SysTickHandler':
+interrupt.c:(.text+0x480): undefined reference to `__Info'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `TIM3_IRQHandler':
+interrupt.c:(.text+0x492): undefined reference to `__Set'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `FLASH_Prog':
+interrupt.c:(.text+0x1e): undefined reference to `FLASH_ProgramHalfWord'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `FLASH_Erase':
+interrupt.c:(.text+0x48): undefined reference to `FLASH_ErasePage'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `ExtFlashSendByte':
+interrupt.c:(.text+0x82): undefined reference to `SPI_ReceiveData8'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `HardwareInit':
+interrupt.c:(.text+0x42a): undefined reference to `__Ctrl'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `USB_HP_CAN_TX_IRQHandler':
+interrupt.c:(.text+0x4a0): undefined reference to `__CTR_HP'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./interrupt.o: in function `USB_LP_CAN_RX0_IRQHandler':
+interrupt.c:(.text+0x4a4): undefined reference to `__USB_Istr'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o: in function `BIOS::LCD::Clear(unsigned short)':
+lcd.cpp:(.text+0x22): undefined reference to `Set_Pixel'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o: in function `BIOS::LCD::Bar(int, int, int, int, unsigned short)':
+lcd.cpp:(.text+0x54): undefined reference to `Set_Pixel'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o: in function `BIOS::LCD::BufferWrite(unsigned short*, int)':
+lcd.cpp:(.text+0x20c): undefined reference to `Set_Pixel'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o: in function `BIOS::LCD::Pattern(int, int, int, int, unsigned short const*, int)':
+lcd.cpp:(.text+0x46a): undefined reference to `Set_Pixel'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o: in function `BIOS::LCD::PutPixel(int, int, unsigned short)':
+lcd.cpp:(.text+0xc6): undefined reference to `Set_Pixel'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./lcd.o:lcd.cpp:(.text+0xe0): more undefined references to `Set_Pixel' follow
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: ./Execute.o: in function `GetProcAddress(char*)':
+Execute.cpp:(.text+0x34c): undefined reference to `BIOS::DAC::GetFrequency()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x358): undefined reference to `BIOS::ADC::ConfigureInput(BIOS::ADC::EInput, BIOS::ADC::ECouple, BIOS::ADC::EResolution, int)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x37c): undefined reference to `BIOS::DAC::SetDuty(int)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x384): undefined reference to `BIOS::DAC::SetFrequency(int)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3a8): undefined reference to `BIOS::ADC::GetPointer()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3ac): undefined reference to `BIOS::ADC::ConfigureTrigger(int, int, BIOS::ADC::ETriggerType, BIOS::ADC::EInput)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3b0): undefined reference to `BIOS::ADC::ConfigureTimebase(float)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3b4): undefined reference to `BIOS::ADC::Get()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3b8): undefined reference to `BIOS::ADC::Enable(bool)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3bc): undefined reference to `BIOS::ADC::Enabled()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3c0): undefined reference to `BIOS::ADC::Restart(int)'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3c4): undefined reference to `BIOS::ADC::GetState()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3c8): undefined reference to `BIOS::DAC::GetDuty()'
+/opt/gcc-arm-none-eabi-9-2020-q2-update/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/bin/ld: Execute.cpp:(.text+0x3cc): undefined reference to `BIOS::DAC::SetMode(BIOS::DAC::EMode, unsigned short*, int)'
+collect2: error: ld returned 1 exit status
+

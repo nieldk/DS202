@@ -14,6 +14,10 @@ public:
 #ifdef DS213
 	constexpr static int gray = RGB565(b0b0b0);
 #endif
+#ifdef DS202
+    constexpr static int gray = RGB565(505050);
+#endif
+
 };
 
 // TODO: Remove and merge with Gui!
